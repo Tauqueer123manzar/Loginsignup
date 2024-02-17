@@ -1,0 +1,90 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: lightblue;
+}
+.container{
+    width: 400px;
+    height: 500px;
+    background-color: rgb(128, 165, 156);
+    margin-left: 35%;
+    margin-top: 150px;
+    border-radius: 10px;
+    box-shadow:  inset 0 -3em 3em rgba(0, 200, 170, 0.3),
+      0 0 0 2px white,
+      0.3em 0.3em 1em rgba(208, 166, 2, 0.6);
+}
+h1{
+    text-align: center;
+}
+.user label{
+    padding: 4px;
+    margin-left: 15%;
+    font-size: medium;
+}
+.user input::placeholder{
+    text-align: center;
+}
+.user input{
+    width: 275px;
+    height: 35px;
+    margin-left: 15%;
+    border-radius: 2px;
+}
+.user input ::placeholder{
+    text-align: center;
+}
+.password label{
+    padding: 4px;
+    margin-left: 15%;
+    font-size: medium;
+}
+.password{
+    margin-top: 25px;
+}
+.password input{
+    width: 275px;
+    height: 35px;
+    margin-left: 15%;
+    border-radius: 2px;
+}
+.password input::placeholder{
+    text-align: center;
+}
+.forget{
+    margin-top: 1rem;
+}
+.forget a{
+    list-style: none;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 4rem;
+    color: rgb(255, 255, 255);
+}
+.btn{
+    height: 40px;
+    width: 275px;
+    margin-top: 3rem;
+    margin-left: 3.5rem;
+    background-color: rgb(4, 19, 114);
+    color: white;
+    cursor: pointer;
+}
+.sign_up{
+    margin-top: 1rem;
+    display: flex;
+}
+.sign_up p{
+    margin-left: 4rem;
+    font-size: 20px;
+}
+
+.sign_up a{
+    margin-top: 1.15rem;
+    list-style: none;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 1rem;
+    color: rgb(6, 9, 196);
+}
