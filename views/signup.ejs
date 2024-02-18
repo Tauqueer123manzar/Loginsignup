@@ -4,31 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container-1">
     <h1>Sign-up Form</h1>
+    <form id="signup-form">
+    <div class="name" id="name">
+        <label for="first">First Name</label>
+        <input type="text" id="first" placeholder="First Name">
 
-    <div class="user">
-    <label for="mail">Email or Phone</label><br>
-    <input type="email" type="number" id="mail" placeholder="Enter Email or Phone">
+        <label for="last">Last Name</label>
+        <input type="text" id="last" placeholder="Last Name">
     </div>
 
-    <div class="password">
-      <label for="pass">Password</label><br>
-      <input type="password" id="pass" placeholder="Enter password">
+    <div class="user-mail" id="username">
+        <label for="mail">Email or Phone</label>
+        <input type="email" type="number" id="mail" placeholder="Enter Email or Phone">
     </div>
 
-    <div class="forget">
-    <a href="#Forget password">Forget password</a>
+    <div class="Password" id="password">
+        <label for="pass">Enter Password</label>
+        <input type="password"  id="pass" placeholder="Enter Password">
+        <!-- <i class="fa-light fa-toggle-off" id="toggle-password"></i> -->
     </div>
 
-    <button class="btn">SUBMIT</button>
+    <input class="refresh" type="checkbox" id="refresh-button"></input>
+    <button class="btn-1">Create-account</button>
 
-    <div class="sign_up">
-      <p>Don't have an account?</p>
-      <a href="#Signup">Sign Up</a>
+    <div class="account">
+    <p>Already have an account?</p>
+    <a href="#sign-in" id="refresh-button">Sign in</a>
     </div>
-</div>
+   </form>
+  </div>
+
+     <!-- Include Font Awesome script -->
+     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const nameInput = document.getElementById("first");
+            const lastNameInput = document.getElementById("last");
+            const usernameInput = document.getElementById("mail");
+            const passwordInput = document.getElementById("pass");
+            const refreshButton = document.getElementById("refresh-button");
+
+            refreshButton.addEventListener("click", function() {
+                // Reset form fields
+                nameInput.value = "";
+                lastNameInput.value = "";
+                usernameInput.value = "";
+                passwordInput.value = "";
+            });
+        });
+     </script>
 </body>
 </html>

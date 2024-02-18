@@ -9,6 +9,7 @@ app.set("views",path.join(__dirname,"views"));
 app.set("view engine","ejs");
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({extended:true}));
 
                   // using get method
 app.get("/",(req,res)=>{
@@ -17,7 +18,11 @@ app.get("/",(req,res)=>{
  
 app.get("/login",(req,res)=>{
     res.render("index.ejs");
-})
+});
+
+app.get("/signup",(req,res)=>{
+    res.render("signup.ejs");
+});
                  // listening on the port
 app.listen(port,(req,res)=>{
   console.log(`Listening on the ${port}`);
