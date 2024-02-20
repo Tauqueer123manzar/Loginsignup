@@ -3,7 +3,8 @@ const express = require("express");
 const app = express();
 const port = 8080;
 const path = require("path");
-const mongoose = require("mongoose");
+const User = require("./mongodb"); 
+// const mongoose = require("mongoose");
 
                // setup path
 app.set("views", path.join(__dirname, "views"));
@@ -13,16 +14,32 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 
 
-               //mongose setup
-main() .then(()=>{
-    console.log("connection sucessfully");
-})
-.catch(err => console.log(err));
+//                //mongose setup
+// main() .then(()=>{
+//     console.log("connection sucessfully");
+// })
+// .catch(err => console.log(err));
 
-async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/personal');
-}
+// async function main() {
+//     await mongoose.connect('mongodb://127.0.0.1:27017/personal');
+// }
 
+//                //making new Schema 
+// const LoginSignup= new mongoose.Schema({
+//    name:{
+//       type:String,
+//       required:true
+//    },
+//    password:{
+//     type:String,
+//     required:true
+//    }
+// })
+
+//             //making new models
+// const User = mongoose.model("User",LoginSignup);
+
+// module.exports=User;
 
             // using get method
 app.get("/", (req, res) => {
@@ -38,17 +55,23 @@ app.get("/signup", (req, res) => {
 });
 
            //using post method.
-app.post("/login",async(req,res)=>{
-    const{mail,pass}=req.body;
-    const userCollection=client.db('yourdatabase').Collection('users');
+// app.post("/login",async(req,res)=>{
+//     const{mail,pass}=req.body;
+//     const userCollection=client.db('yourdatabase').Collection('users');
 
-    const user =await userCollection.findOne({mail,pass});
-    if(user){
-        res.send("Login succuessfull");
-    }else{
-        res.status(401).send("Invalid credentials");
+//     const user =await userCollection.findOne({mail,pass});
+//     if(user){
+//         res.send("Login succuessfull");
+//     }else{
+//         res.status(401).send("Invalid credentials");
+//     }
+// });     
+
+app.post("/signup",async(req,res)=>{
+    const data={
+
     }
-});     
+})
 
 // listening on the port
 app.listen(port, (req, res) => {
